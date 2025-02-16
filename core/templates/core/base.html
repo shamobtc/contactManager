@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <nav class="py-4 px-6 bg-gray-900 flex justify-between items-center shadow-lg">
+        <h1 class="text-white text-2xl font-bold tracking-tight">
+           <a href="/"> Contact Manager </a>
+            <span class="text-emerald-400">.</span>
+        </h1>
+
+       <a href="{% url 'contact:add_contact' %}" 
+            class="fixed bottom-8 right-8 p-5 bg-emerald-400 text-white text-2xl 
+          rounded-full shadow-xl hover:shadow-2xl transition-all
+          hover:rotate-90 hover:bg-emerald-500 z-50"> <!-- Added z-50 -->
+        +
+        </a>
+    </nav>    
+    
+    <main class="container mx-auto max-w-4xl p-6 relative"> 
+        <div class="bg-white rounded-xl shadow-md p-6">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    
+</body>
+</html>
